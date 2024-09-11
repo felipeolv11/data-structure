@@ -85,24 +85,24 @@ namespace exericico04
 
             string[] palavras = texto.Split(' ', '.', ',', ';', ':', '!', '?', '"');
 
-            Dictionary<string, int> contagem = new Dictionary<string, int>();
+            Dictionary<string, int> dicionario = new Dictionary<string, int>();
             
             foreach (string palavra in palavras)
             {
                 string palavraMinuscula = palavra.ToLower();
 
-                if (contagem.ContainsKey(palavraMinuscula))
+                if (dicionario.ContainsKey(palavraMinuscula))
                 {
-                    contagem[palavraMinuscula]++;
+                    dicionario[palavraMinuscula]++;
                 }
 
                 else
                 {
-                    contagem[palavraMinuscula] = 1;
+                    dicionario[palavraMinuscula] = 1;
                 }
             }
 
-            return contagem.ContainsKey(palavra_pesquisa);
+            return dicionario.ContainsKey(palavra_pesquisa);
         }
 
         static int PalavrasDistintas(string caminho_do_arquivo)
@@ -111,7 +111,7 @@ namespace exericico04
 
             string[] palavras = texto.Split(' ', '.', ',', ';', ':', '!', '?', '"');
 
-            Dictionary<string, int> contagem = new Dictionary<string, int>();
+            Dictionary<string, int> dicionario = new Dictionary<string, int>();
 
             int count = 0;
 
@@ -119,9 +119,9 @@ namespace exericico04
             {
                 string palavraMinuscula = palavra.ToLower();
 
-                if (!contagem.ContainsKey(palavraMinuscula))
+                if (!dicionario.ContainsKey(palavraMinuscula))
                 {
-                    contagem[palavraMinuscula] = 1;
+                    dicionario[palavraMinuscula] = 1;
                     count++;
                 }
             }
@@ -135,24 +135,24 @@ namespace exericico04
 
             string[] palavras = texto.Split(' ', '.', ',', ';', ':', '!', '?', '"');
 
-            Dictionary<string, int> contagem = new Dictionary<string, int>();
+            Dictionary<string, int> dicionario = new Dictionary<string, int>();
 
             foreach (string palavra in palavras)
             {
                 string palavraMinuscula = palavra.ToLower();
 
-                if (contagem.ContainsKey(palavraMinuscula))
+                if (dicionario.ContainsKey(palavraMinuscula))
                 {
-                    contagem[palavraMinuscula]++;
+                    dicionario[palavraMinuscula]++;
                 }
 
                 else
                 {
-                    contagem[palavraMinuscula] = 1;
+                    dicionario[palavraMinuscula] = 1;
                 }
             }
 
-            foreach (KeyValuePair<string, int> entrada in contagem)
+            foreach (KeyValuePair<string, int> entrada in dicionario)
             {
                 Console.WriteLine("Palavra: {0} | Count: {1}", entrada.Key, entrada.Value);
             }
