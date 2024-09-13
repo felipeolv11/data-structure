@@ -167,11 +167,11 @@ namespace exercicio01
 
         static void RemoverNumerosPares(ref List<int> lista_de_inteiros)
         {
-            for (int i = 0; i < lista_de_inteiros.Count(); i++)
+            for (int i = lista_de_inteiros.Count - 1; i >= 0; i--)
             {
                 if (lista_de_inteiros[i] % 2 == 0)
                 {
-                    lista_de_inteiros.Remove(i);
+                    lista_de_inteiros.RemoveAt(i);
                 }
             }
         }
@@ -180,9 +180,9 @@ namespace exercicio01
         {
             Console.WriteLine("Lista:");
 
-            foreach (int numero in lista_de_inteiros)
+            for (int i = 0; i < lista_de_inteiros.Count(); i++)
             {
-                Console.WriteLine("- ", numero);
+                Console.WriteLine("- " + lista_de_inteiros[i]);
             }
         }
 
