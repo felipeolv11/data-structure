@@ -20,7 +20,7 @@ namespace exercicio04
                 Console.WriteLine("2 - Atender um cliente");
                 Console.WriteLine("3 - Exibir número de clientes na fila");
                 Console.WriteLine("4 - Exibir próximo cliente a ser atendido");
-                Console.WriteLine("5 = Encerrar o programa");
+                Console.WriteLine("5 - Encerrar o programa");
                 opcao = int.Parse(Console.ReadLine());
 
                 switch (opcao)
