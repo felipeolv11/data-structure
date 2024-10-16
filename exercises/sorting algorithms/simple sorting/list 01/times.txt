@@ -1,0 +1,69 @@
+>> selection sort
+
+arr size 1000
+ascending order: 8ms
+descending order: 25ms
+random order: 39ms
+
+arr size 10000
+ascending order: 1240ms
+descending order: 2729ms
+random order: 4041ms
+
+arr size 100000
+ascending order: 79250ms
+descending order: 231993ms
+random order: 370933ms
+
+arr size 500000
+ascending order: 1834001ms
+descending order: 5374599ms
+random order: 8585995ms
+
+--------------------
+
+>> bubble sort
+
+arr size 1000
+ascending order: 11ms
+descending order: 35ms
+random order: 52ms
+
+arr size 10000
+ascending order: 1494ms
+descending order: 3361ms
+random order: 5130ms
+
+arr size 100000
+ascending order: 99577ms
+descending order: 285769ms
+random order: 471042ms
+
+arr size 500000
+ascending order: 2303563ms
+descending order: 6614244ms
+random order: 10904936ms
+
+--------------------
+
+>> insertion sort
+
+arr size 1000
+ascending order: 0ms
+descending order: 1ms
+random order: 2ms
+
+arr size 10000
+ascending order: 0ms
+descending order: 151ms
+random order: 228ms
+
+arr size 100000
+ascending order: 2ms
+descending order: 15439ms
+random order: 23586ms
+
+arr size 500000
+ascending order: 11ms
+descending order: 416445ms
+random order: 663924ms
