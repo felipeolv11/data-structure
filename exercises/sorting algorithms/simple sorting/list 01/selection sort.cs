@@ -198,24 +198,24 @@ namespace metodo_selecao
             Console.ReadLine();
         }
 
-        static void Selecao(int[] array, ref int mov, ref int comp)
+        static void Selecao(int[] arr, ref int mov, ref int comp)
         {
-            int n = array.Length;
+            int n = arr.Length;
             for (int i = 0; i < (n - 1); i++)
             {
                 int menor = i;
                 for (int j = (i + 1); j < n; j++)
                 {
-                    if (array[menor] > array[j])
+                    if (arr[menor] > arr[j])
                     {
                         menor = j;
                     }
                     comp++;
                 }
 
-                int temp = array[menor];
-                array[menor] = array[i];
-                array[i] = temp;
+                int temp = arr[menor];
+                arr[menor] = arr[i];
+                arr[i] = temp;
                 mov += 3;
             }
         }
