@@ -1,0 +1,69 @@
+>> merge sort
+
+arr size 1000
+ascending order: 0ms
+descending order: 2ms
+random order: 3ms
+
+arr size 10000
+ascending order: 11ms
+descending order: 30ms
+random order: 46ms
+
+arr size 100000
+ascending order: 113ms
+descending order: 317ms
+random order: 505ms
+
+arr size 500000
+ascending order: 826ms
+descending order: 2160ms
+random order: 3230ms
+
+--------------------
+
+>> quick sort
+
+arr size 1000
+ascending order: 0ms
+descending order: 1ms
+random order: 1ms
+
+arr size 10000
+ascending order: 2ms
+descending order: 9ms
+random order: 17ms
+
+arr size 100000
+ascending order: 52ms
+descending order: 146ms
+random order: 236ms
+
+arr size 500000
+ascending order: 311ms
+descending order: 726ms
+random order: 1222ms
+
+--------------------
+
+>> heap sort
+
+arr size 1000
+ascending order: 3ms
+descending order: 9ms
+random order: 14ms
+
+arr size 10000
+ascending order: 51ms
+descending order: 138ms
+random order: 211ms
+
+arr size 100000
+ascending order: 938ms
+descending order: 2126ms
+random order: 2986ms
+
+arr size 500000
+ascending order: 3822ms
+descending order: 9511ms
+random order: 14405ms
