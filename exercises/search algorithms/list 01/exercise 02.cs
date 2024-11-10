@@ -26,7 +26,7 @@ namespace exercicio02
             Console.ReadLine();
         }
 
-        static int PesquisaBinaria(int[] array, int n, int x)
+        static int PesquisaBinaria(int[] arr, int n, int x)
         {
             int resp = -1;
             int dir = n - 1, esq = 0, meio;
@@ -34,13 +34,13 @@ namespace exercicio02
             while (esq <= dir)
             {
                 meio = (esq + dir) / 2;
-                if (x == array[meio])
+                if (x == arr[meio])
                 {
                     resp = meio + 1;
                     esq = n;
                 }
 
-                else if (x > array[meio])
+                else if (x > arr[meio])
                 {
                     esq = meio + 1;
                 }
