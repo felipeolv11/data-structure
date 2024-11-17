@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace metodo_insercao
+namespace metodo_bubblesort
 {
     class Program
     {
@@ -48,14 +48,14 @@ namespace metodo_insercao
             }
 
 
-            // Ordem Crescente
+            // ordem crescente
             for (int i = 0; i < tempo_cresc.Length; i++)
             {
                 int tempo_mov = 0;
                 int tempo_comp = 0;
 
                 sw.Start();
-                Insercao(copia_cresc, ref tempo_mov, ref tempo_comp);
+                BubbleSort(copia_cresc, ref tempo_mov, ref tempo_comp);
                 sw.Stop();
 
                 tempo_cresc[i] = sw.ElapsedMilliseconds;
@@ -76,7 +76,7 @@ namespace metodo_insercao
 
             long media_cresc = tempoTotal_cresc / tempo_cresc.Length;
 
-            Console.WriteLine("Metódo: Inserção | Tipo: Crescente | Tamanho: {0} | Tempo: {1}ms | Movimentações: {2} | Comparações: {3}", ordem_crescente.Length, media_cresc, num_movimentacao, num_comparacao);
+            Console.WriteLine("Metódo: Bubblesort | Tipo: Crescente | Tamanho: {0} | Tempo: {1}ms | Movimentações: {2} | Comparações: {3}", ordem_crescente.Length, media_cresc, num_movimentacao, num_comparacao);
 
             Console.WriteLine("Deseja ver o antes de depois do vetor?");
             string resp = Console.ReadLine();
@@ -97,14 +97,14 @@ namespace metodo_insercao
                 Console.WriteLine("Continuando...");
             }
 
-            // Ordem Decrescente
+            // ordem decrescente
             for (int i = 0; i < tempo_decresc.Length; i++)
             {
                 int tempo_mov = 0;
                 int tempo_comp = 0;
 
                 sw.Start();
-                Insercao(copia_decresc, ref tempo_mov, ref tempo_comp);
+                BubbleSort(copia_decresc, ref tempo_mov, ref tempo_comp);
                 sw.Stop();
 
                 tempo_decresc[i] = sw.ElapsedMilliseconds;
@@ -125,7 +125,7 @@ namespace metodo_insercao
 
             long media_decresc = tempoTotal_decresc / tempo_decresc.Length;
 
-            Console.WriteLine("Metódo: Inserção | Tipo: Decrescente | Tamanho: {0} | Tempo: {1}ms | Movimentações: {2} | Comparações: {3}", ordem_decrescente.Length, media_decresc, num_movimentacao, num_comparacao);
+            Console.WriteLine("Metódo: Bubblesort | Tipo: Decrescente | Tamanho: {0} | Tempo: {1}ms | Movimentações: {2} | Comparações: {3}", ordem_decrescente.Length, media_decresc, num_movimentacao, num_comparacao);
 
             Console.WriteLine("Deseja ver o antes de depois do vetor?");
             resp = Console.ReadLine();
@@ -146,14 +146,14 @@ namespace metodo_insercao
                 Console.WriteLine("Continuando...");
             }
 
-            // Ordem Aleatória
+            // ordem aleatoria
             for (int i = 0; i < tempo_aleat.Length; i++)
             {
                 int tempo_mov = 0;
                 int tempo_comp = 0;
 
                 sw.Start();
-                Insercao(copia_aleat, ref tempo_mov, ref tempo_comp);
+                BubbleSort(copia_aleat, ref tempo_mov, ref tempo_comp);
                 sw.Stop();
 
                 tempo_aleat[i] = sw.ElapsedMilliseconds;
@@ -174,7 +174,7 @@ namespace metodo_insercao
 
             long media_aleat = tempoTotal_aleat / tempo_aleat.Length;
 
-            Console.WriteLine("Metódo: Inserção | Tipo: Aleatório | Tamanho: {0} | Tempo: {1}ms | Movimentações: {2} | Comparações: {3}", ordem_aleatoria.Length, media_aleat, num_movimentacao, num_comparacao);
+            Console.WriteLine("Metódo: Bubblesort | Tipo: Aleatório | Tamanho: {0} | Tempo: {1}ms | Movimentações: {2} | Comparações: {3}", ordem_aleatoria.Length, media_aleat, num_movimentacao, num_comparacao);
 
             Console.WriteLine("Deseja ver o antes de depois do vetor?");
             resp = Console.ReadLine();
@@ -198,19 +198,17 @@ namespace metodo_insercao
             Console.ReadLine();
         }
 
-        static void Insercao(int[] arr, ref int mov, ref int comp)
+        static void Bubblesort(int[] arr, ref int mov, ref int comp)
         {
             int n = arr.Length;
-            for (int i = 1; i < n; i++)
+            for (int i = 0; i < (n - 1); i++)
             {
-                int tmp = arr[i];
-                int j = i - 1;
-                while ((j >= 0) && (arr[j] > tmp))
+                for (int j = n - 1; j > i; j--)
                 {
-                    arr[j + 1] = arr[j];
-                    j--;
+                    int temp = arr[j];
+                    arr[j] = arr[j - 1];
+                    arr[j - 1] = temp;
                 }
-                arr[j + 1] = tmp;
             }
         }
 

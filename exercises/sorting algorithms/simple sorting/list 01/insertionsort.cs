@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace metodo_selecao
+namespace metodo_insertionsort
 {
     class Program
     {
@@ -48,14 +48,14 @@ namespace metodo_selecao
             }
 
 
-            // Ordem Crescente
+            // ordem crescente
             for (int i = 0; i < tempo_cresc.Length; i++)
             {
                 int tempo_mov = 0;
                 int tempo_comp = 0;
 
                 sw.Start();
-                Selecao(copia_cresc, ref tempo_mov, ref tempo_comp);
+                InsertionSort(copia_cresc, ref tempo_mov, ref tempo_comp);
                 sw.Stop();
 
                 tempo_cresc[i] = sw.ElapsedMilliseconds;
@@ -76,7 +76,7 @@ namespace metodo_selecao
 
             long media_cresc = tempoTotal_cresc / tempo_cresc.Length;
 
-            Console.WriteLine("Metódo: Seleção | Tipo: Crescente | Tamanho: {0} | Tempo: {1}ms | Movimentações: {2} | Comparações: {3}", ordem_crescente.Length, media_cresc, num_movimentacao, num_comparacao);
+            Console.WriteLine("Metódo: Insertionsort | Tipo: Crescente | Tamanho: {0} | Tempo: {1}ms | Movimentações: {2} | Comparações: {3}", ordem_crescente.Length, media_cresc, num_movimentacao, num_comparacao);
 
             Console.WriteLine("Deseja ver o antes de depois do vetor?");
             string resp = Console.ReadLine();
@@ -97,14 +97,14 @@ namespace metodo_selecao
                 Console.WriteLine("Continuando...");
             }
 
-            // Ordem Decrescente
+            // ordem decrescente
             for (int i = 0; i < tempo_decresc.Length; i++)
             {
                 int tempo_mov = 0;
                 int tempo_comp = 0;
 
                 sw.Start();
-                Selecao(copia_decresc, ref tempo_mov, ref tempo_comp);
+                InsertionSort(copia_decresc, ref tempo_mov, ref tempo_comp);
                 sw.Stop();
 
                 tempo_decresc[i] = sw.ElapsedMilliseconds;
@@ -125,7 +125,7 @@ namespace metodo_selecao
 
             long media_decresc = tempoTotal_decresc / tempo_decresc.Length;
 
-            Console.WriteLine("Metódo: Seleção | Tipo: Decrescente | Tamanho: {0} | Tempo: {1}ms | Movimentações: {2} | Comparações: {3}", ordem_decrescente.Length, media_decresc, num_movimentacao, num_comparacao);
+            Console.WriteLine("Metódo: Insertionsort | Tipo: Decrescente | Tamanho: {0} | Tempo: {1}ms | Movimentações: {2} | Comparações: {3}", ordem_decrescente.Length, media_decresc, num_movimentacao, num_comparacao);
 
             Console.WriteLine("Deseja ver o antes de depois do vetor?");
             resp = Console.ReadLine();
@@ -146,14 +146,14 @@ namespace metodo_selecao
                 Console.WriteLine("Continuando...");
             }
 
-            // Ordem Aleatória
+            // ordem aleatoria
             for (int i = 0; i < tempo_aleat.Length; i++)
             {
                 int tempo_mov = 0;
                 int tempo_comp = 0;
 
                 sw.Start();
-                Selecao(copia_aleat, ref tempo_mov, ref tempo_comp);
+                InsertionSort(copia_aleat, ref tempo_mov, ref tempo_comp);
                 sw.Stop();
 
                 tempo_aleat[i] = sw.ElapsedMilliseconds;
@@ -174,7 +174,7 @@ namespace metodo_selecao
 
             long media_aleat = tempoTotal_aleat / tempo_aleat.Length;
 
-            Console.WriteLine("Metódo: Seleção | Tipo: Aleatório | Tamanho: {0} | Tempo: {1}ms | Movimentações: {2} | Comparações: {3}", ordem_aleatoria.Length, media_aleat, num_movimentacao, num_comparacao);
+            Console.WriteLine("Metódo: Insertionsort | Tipo: Aleatório | Tamanho: {0} | Tempo: {1}ms | Movimentações: {2} | Comparações: {3}", ordem_aleatoria.Length, media_aleat, num_movimentacao, num_comparacao);
 
             Console.WriteLine("Deseja ver o antes de depois do vetor?");
             resp = Console.ReadLine();
@@ -198,32 +198,26 @@ namespace metodo_selecao
             Console.ReadLine();
         }
 
-        static void Selecao(int[] arr, ref int mov, ref int comp)
+        static void InsertionSort(int[] arr, ref int mov, ref int comp)
         {
             int n = arr.Length;
-            for (int i = 0; i < (n - 1); i++)
+            for (int i = 1; i < n; i++)
             {
-                int menor = i;
-                for (int j = (i + 1); j < n; j++)
+                int tmp = arr[i];
+                int j = i - 1;
+                while ((j >= 0) && (arr[j] > tmp))
                 {
-                    if (arr[menor] > arr[j])
-                    {
-                        menor = j;
-                    }
-                    comp++;
+                    arr[j + 1] = arr[j];
+                    j--;
                 }
-
-                int temp = arr[menor];
-                arr[menor] = arr[i];
-                arr[i] = temp;
-                mov += 3;
+                arr[j + 1] = tmp;
             }
         }
 
         static void Mostrar(int[] arr)
         {
             Console.Write("[ ");
-            for(int i = 0; i < arr.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
                 Console.Write(arr[i] + " ");
             Console.WriteLine("]");
         }

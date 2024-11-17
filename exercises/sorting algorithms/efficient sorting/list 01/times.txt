@@ -1,4 +1,4 @@
->> merge sort
+>> mergesort
 
 arr size 1000
 ascending order: 0ms
@@ -22,7 +22,7 @@ random order: 3230ms
 
 --------------------
 
->> quick sort
+>> quicksort
 
 arr size 1000
 ascending order: 0ms
@@ -46,7 +46,7 @@ random order: 1222ms
 
 --------------------
 
->> heap sort
+>> heapsort
 
 arr size 1000
 ascending order: 3ms

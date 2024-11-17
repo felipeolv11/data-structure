@@ -1,4 +1,4 @@
->> selection sort
+>> selectionsort
 
 arr size 1000
 ascending order: 8ms
@@ -22,7 +22,7 @@ random order: 8585995ms
 
 --------------------
 
->> bubble sort
+>> bubblesort
 
 arr size 1000
 ascending order: 11ms
@@ -46,7 +46,7 @@ random order: 10904936ms
 
 --------------------
 
->> insertion sort
+>> insertionsort
 
 arr size 1000
 ascending order: 0ms
